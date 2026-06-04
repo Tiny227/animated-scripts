@@ -273,6 +273,52 @@
   line-height: 1.6;
 }
 
+/* Waitlist Section */
+.waitlist-section {
+  padding: 8rem 0;
+  background-color: var(--off-white);
+  border-top: 1px solid var(--warm-grey);
+}
+
+.waitlist-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.waitlist-form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.waitlist-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--warm-grey);
+  background-color: var(--pure-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.waitlist-input:focus {
+  border-color: var(--deep-forest);
+}
+
+.waitlist-success {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: rgba(27, 58, 45, 0.05);
+  border: 1px solid var(--deep-forest);
+}
+
+.waitlist-success h3 {
+  color: var(--deep-forest);
+  margin-bottom: 0.5rem;
+}
+
 /* Footer */
 .footer {
   padding: 6rem 0 0;

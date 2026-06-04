@@ -1,6 +1,36 @@
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) {
+      try {
+        const response = await fetch('http://localhost:3001/api/waitlist', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        })
+
+        if (response.ok) {
+          setSubmitted(true)
+          setEmail('')
+        } else {
+          console.error('Failed to join waitlist')
+          alert('Something went wrong. Please try again.')
+        }
+      } catch (error) {
+        console.error('Error:', error)
+        alert('Could not connect to the server.')
+      }
+    }
+  }
+
   return (
     <div className="app">
       <nav className="navbar">
@@ -30,7 +60,7 @@ function App() {
             <h1 className="hero-title">Luxury Craftsmanship. <br /><span className="text-accent">Ethical Soul.</span></h1>
             <p className="hero-subtitle">High-quality, ethically-manufactured footwear for the modern urban professional. Experience the perfect stride.</p>
             <div className="hero-btns">
-              <button className="btn btn-primary">Shop Collection</button>
+              <a href="#waitlist" className="btn btn-primary">Join the Waitlist</a>
               <button className="btn btn-secondary">Our Story</button>
             </div>
           </div>
@@ -88,6 +118,34 @@ function App() {
                 <p>Luxury quality without the traditional retail markup.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="waitlist" className="waitlist-section">
+        <div className="container">
+          <div className="waitlist-content">
+            <h2 className="section-title">Step Into the Future</h2>
+            <p className="section-subtitle">Join our exclusive waitlist for early access to our debut collection and members-only pricing.</p>
+            
+            {submitted ? (
+              <div className="waitlist-success">
+                <h3>Thank you for joining!</h3>
+                <p>We've added your email to the list. Stay tuned for updates.</p>
+              </div>
+            ) : (
+              <form className="waitlist-form" onSubmit={handleSubmit}>
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="waitlist-input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <button type="submit" className="btn btn-primary">Get Early Access</button>
+              </form>
+            )}
           </div>
         </div>
       </section>
