@@ -13,7 +13,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-const WAITLIST_FILE = path.join(__dirname, 'waitlist.json');
+const WAITLIST_FILE = '/home/team/shared/waitlist.json';
 
 app.post('/api/waitlist', (req, res) => {
   const { email } = req.body;

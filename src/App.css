@@ -319,6 +319,276 @@
   margin-bottom: 0.5rem;
 }
 
+/* Page Layout */
+.page-content {
+  padding-top: 40px;
+}
+
+.page-header {
+  padding: 6rem 0;
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.page-title {
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+.narrow-container {
+  max-width: 800px;
+}
+
+.content-block {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sub-headline {
+  font-family: var(--font-accent);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--terracotta);
+  margin-bottom: 2rem;
+}
+
+.bg-alt {
+  background-color: var(--pure-white);
+}
+
+.bg-forest {
+  background-color: var(--deep-forest);
+}
+
+.text-off-white {
+  color: var(--off-white);
+}
+
+.text-camel {
+  color: var(--warm-camel);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+/* About Page Specific */
+.craft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pillar h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: var(--deep-forest);
+}
+
+.craft-image img {
+  width: 100%;
+  height: auto;
+  box-shadow: 20px 20px 0 var(--warm-camel);
+}
+
+.mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.mission-list li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.mission-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+}
+
+.large-text {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.4;
+}
+
+.footer-quote {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+/* Transparency Page Specific */
+.breakdown-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin: 4rem 0;
+}
+
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cost-table th, .cost-table td {
+  padding: 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--warm-grey);
+}
+
+.cost-table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--warm-grey);
+}
+
+.item-desc {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--warm-grey);
+  margin-top: 0.25rem;
+}
+
+.table-subtotal td {
+  border-bottom: 2px solid var(--deep-forest);
+  background-color: rgba(196, 168, 130, 0.1);
+}
+
+.table-retail td {
+  font-size: 1.25rem;
+  color: var(--terracotta);
+  border-bottom: none;
+}
+
+.breakdown-notes {
+  background-color: var(--off-white);
+  padding: 2rem;
+  border: 1px solid var(--warm-grey);
+  align-self: start;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.notes-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.notes-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--deep-forest);
+}
+
+.comparison-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  background-color: var(--deep-forest);
+  color: var(--off-white);
+  text-align: center;
+}
+
+.comparison-box h4 {
+  color: var(--warm-camel);
+  margin-bottom: 1.5rem;
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.commitment-item h4 {
+  margin-bottom: 1rem;
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.promise-card {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--warm-camel);
+}
+
+.promise-card h5 {
+  color: var(--warm-camel);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .craft-grid, .breakdown-container, .commitment-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .promise-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+  
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cost-table th:nth-child(2), .cost-table td:nth-child(2) {
+    display: none;
+  }
+}
+
 /* Footer */
 .footer {
   padding: 6rem 0 0;
