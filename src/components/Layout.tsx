@@ -32,7 +32,7 @@ const Layout = () => {
         <div className="container footer-container">
           <div className="footer-brand">
             <span className="logo-text">STRIDE & SOUL</span>
-            <p>Elevating your journey, one step at a time.</p>
+            <p>Made in Europe. Priced with honesty. Built for your life.</p>
           </div>
           <div className="footer-links">
             <div className="link-group">
