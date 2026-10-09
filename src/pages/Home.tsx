@@ -1,18 +1,12 @@
 import { useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, Link } from 'react-router-dom'
+import { products } from '../config/products'
 
 const Home = () => {
   const [searchParams] = useSearchParams()
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [referralData, setReferralCode] = useState({ code: '', count: 0 })
-
-  const products = [
-    { name: 'The Sentinel', price: '$185', category: 'Cap-toe Oxford', origin: 'Elda, Spain', image: '/logo_concept_01.webp' },
-    { name: 'The Pivot', price: '$175', category: 'Penny Loafer', origin: 'Ubrique, Spain', image: '/logo_concept_02.webp' },
-    { name: 'The Compass', price: '$155', category: 'Minimalist Sneaker', origin: 'Porto, Portugal', image: '/color_palette_moodboard.webp' },
-    { name: 'The Anchor', price: '$215', category: 'Chelsea Boot', origin: 'Elda, Spain', image: '/brand_moodboard.webp' }
-  ]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -73,7 +67,7 @@ const Home = () => {
           </div>
           <div className="product-grid">
             {products.map((product) => (
-              <div key={product.name} className="product-card">
+              <Link key={product.slug} to={`/product/${product.slug}`} className="product-card">
                 <div className="product-image">
                   <div className="image-placeholder">
                     <img src={product.image} alt={product.name} className="concept-thumb" />
@@ -87,7 +81,7 @@ const Home = () => {
                   <p className="product-category">{product.category}</p>
                   <p className="product-price">{product.price}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

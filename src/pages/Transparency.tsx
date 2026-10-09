@@ -1,50 +1,13 @@
 import { useState } from 'react';
+import { products } from '../config/products';
 
 const Transparency = () => {
   const [activeModel, setActiveModel] = useState('The Sentinel');
 
-  const breakdowns: Record<string, any> = {
-    'The Sentinel': {
-      retail: 185,
-      components: [
-        { label: 'Materials', description: 'Italian LWG Gold calfskin, cork, leather sole', cost: 34, percent: 18 },
-        { label: 'Labor', description: 'Goodyear welted by artisans in Elda, Spain', cost: 24, percent: 13 },
-        { label: 'Transport & Duty', description: 'Iberian Peninsula to distribution center', cost: 12, percent: 7 },
-        { label: 'Packaging', description: 'FSC-certified box, organic cotton bag', cost: 4, percent: 2 },
-      ],
-      totalCost: 74
-    },
-    'The Pivot': {
-      retail: 175,
-      components: [
-        { label: 'Materials', description: 'Spanish suede, Blake-stitch components', cost: 28, percent: 16 },
-        { label: 'Labor', description: 'Hand-stitched in Ubrique, Spain', cost: 18, percent: 10 },
-        { label: 'Transport & Duty', description: 'Iberian Peninsula to distribution center', cost: 12, percent: 7 },
-        { label: 'Packaging', description: 'FSC-certified box, organic cotton bag', cost: 4, percent: 2 },
-      ],
-      totalCost: 62
-    },
-    'The Compass': {
-      retail: 155,
-      components: [
-        { label: 'Materials', description: 'Recycled rubber, organic cotton, eco-leather', cost: 14, percent: 9 },
-        { label: 'Labor', description: 'Sustainable assembly in Porto, Portugal', cost: 10, percent: 6 },
-        { label: 'Transport & Duty', description: 'Iberian Peninsula to distribution center', cost: 10, percent: 7 },
-        { label: 'Packaging', description: 'FSC-certified box, organic cotton bag', cost: 4, percent: 3 },
-      ],
-      totalCost: 38
-    },
-    'The Anchor': {
-      retail: 215,
-      components: [
-        { label: 'Materials', description: 'Italian LWG Gold calfskin, rugged welt', cost: 38, percent: 18 },
-        { label: 'Labor', description: 'Goodyear welted by artisans in Elda, Spain', cost: 25, percent: 12 },
-        { label: 'Transport & Duty', description: 'Iberian Peninsula to distribution center', cost: 15, percent: 7 },
-        { label: 'Packaging', description: 'FSC-certified box, organic cotton bag', cost: 4, percent: 2 },
-      ],
-      totalCost: 82
-    }
-  };
+  const breakdowns: Record<string, any> = {};
+  products.forEach(p => {
+    breakdowns[p.name] = p.breakdown;
+  });
 
   const currentBreakdown = breakdowns[activeModel];
 

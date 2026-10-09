@@ -1076,3 +1076,125 @@
 .no-padding-bottom {
   padding-bottom: 0 !important;
 }
+
+/* Product Detail Page */
+.product-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.product-hero-image {
+  background-color: var(--off-white);
+  padding: 2rem;
+}
+
+.main-product-img {
+  width: 100%;
+  height: auto;
+  box-shadow: 15px 15px 0 var(--warm-camel);
+}
+
+.breadcrumb {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  color: var(--warm-grey);
+}
+
+.breadcrumb a {
+  color: var(--warm-grey);
+}
+
+.breadcrumb .current {
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+.product-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-category-detail {
+  font-size: 1.25rem;
+  color: var(--warm-grey);
+  margin-bottom: 1rem;
+}
+
+.product-price-detail {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+.product-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid var(--warm-grey);
+  border-bottom: 1px solid var(--warm-grey);
+  padding: 2rem 0;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spec-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--warm-grey);
+}
+
+.spec-value {
+  font-weight: 600;
+  color: var(--deep-forest);
+}
+
+.waitlist-form-inline {
+  display: flex;
+  gap: 1rem;
+}
+
+.success-message-inline {
+  padding: 1.5rem;
+  background-color: rgba(196, 168, 130, 0.1);
+  border-left: 4px solid var(--terracotta);
+}
+
+.breakdown-container-narrow {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-underlined {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--deep-forest);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .product-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 2.5rem;
+  }
+  
+  .waitlist-form-inline {
+    flex-direction: column;
+  }
+}

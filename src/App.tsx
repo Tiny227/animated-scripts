@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Transparency from './pages/Transparency';
+import ProductDetail from './pages/ProductDetail';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="transparency" element={<Transparency />} />
+          <Route path="product/:slug" element={<ProductDetail />} />
         </Route>
       </Routes>
     </Router>
