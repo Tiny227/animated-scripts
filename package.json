@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize-images": "node optimize_images.js"
+    "optimize-images": "node optimize_images.js",
+    "start": "bun server.js",
+    "publish": "bash publish.sh"
   },
   "dependencies": {
     "cors": "^2.8.6",
